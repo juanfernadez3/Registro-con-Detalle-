@@ -1,0 +1,85 @@
+﻿<Window x:Class="RegistroConDetalle1.UI.FormularioPersona"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroConDetalle.UI"
+        mc:Ignorable="d"
+      Title="Formulario Personas" Height="435" Width="530" Background="LightGray">
+
+    <Window.Resources>
+        <Style x:Key="Texts" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Width" Value="70"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"  Style="{StaticResource Texts}" Margin="0,4,0,71">PersonaID:</TextBlock>
+        <TextBlock Grid.Row="0"  Style="{StaticResource Texts}" Margin="0,29,0,46">Nombre:</TextBlock>
+        <TextBlock Grid.Row="0"  Style="{StaticResource Texts}" Margin="0,84,0,91" RenderTransformOrigin="0.429,1.202" Grid.RowSpan="2">Cedula:</TextBlock>
+        <TextBlock Grid.Row="0"  Style="{StaticResource Texts}" Margin="0,54,0,21">Direccion:</TextBlock>
+        <TextBlock Grid.Row="0"  Style="{StaticResource Texts}" Margin="230,91,0,101" Width="120" Grid.RowSpan="2" RenderTransformOrigin="0.542,0.602">Fecha Nacimiento:</TextBlock>
+
+        <TextBlock Grid.Row="1"  Style="{StaticResource Texts}" Margin="3,18,0,70" Width="120">Agregar Telefonos</TextBlock>
+        <TextBlock Grid.Row="1"  Style="{StaticResource Texts}" Margin="0,51,0,37" Width="120">Telefono:</TextBlock>
+        <TextBlock Grid.Row="1"  Style="{StaticResource Texts}" Margin="186,53,0,37" Width="96">Tipo Telefono:</TextBlock>
+
+        <DataGrid Name="TelefonoDataGrid" Grid.Row="1" Margin="0,81,3,-109" Grid.RowSpan="2"/>
+        <Button Name="BuscarButton" Height="25" Content="Buscar" HorizontalContentAlignment="Right" Margin="195,4,237,72" Grid.Row="0" Click="BuscarButton_Click" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <ImageBrush ImageSource="buscar.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+
+        </Button>
+        <Button Name="AgregarButton" Content="Agregar" HorizontalContentAlignment="Right" Margin="411,41,11,38" Grid.Row="1" Click="AgregarButton_Click" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="guardar.png" AlignmentX="Left"/>
+            </Button.Background>
+
+        </Button>
+        <Button Name="RemoverButton" Height="25" Content="Remover Telefono" HorizontalContentAlignment="Right" Margin="1,115,354,-135" Grid.Row="2" Click="RemoverButton_Click" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="eliminar.png" AlignmentX="Left"/>
+            </Button.Background>
+
+        </Button>
+
+        <Button Name="NuevoButton" Content="Nuevo" HorizontalContentAlignment="Right" Margin="90,145,339,-175" Grid.Row="2" Click="NuevoButton_Click" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="nuevo.png" AlignmentX="Left"/>
+            </Button.Background>
+
+        </Button>
+        <Button Name="GuardarButton" Content="Guardar" HorizontalContentAlignment="Right"  Margin="216,144,201,-174" Grid.Row="2" Click="GuardarButton_Click" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="guardar.png" AlignmentX="Left"/>
+            </Button.Background>
+
+        </Button>
+        <Button Name="Eliminar" Content="Eliminar" HorizontalContentAlignment="Right"  Margin="366,142,54,-172" Grid.Row="2" Click="Eliminar_Click" FontWeight="Bold" FontSize="16">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="eliminar.png" AlignmentX="Left"/>
+            </Button.Background>
+
+        </Button>
+        <TextBox Name="PersoaIdTextBox" Text="0" HorizontalContentAlignment="Center" Height="25" Margin="80,5,331,72" Grid.Row="0"/>
+        <TextBox Name="NombreTextBox" Margin="80,34,237,46" Grid.Row="0"/>
+        <TextBox Name="DireccionTextBox" Margin="80,59,237,21" Grid.Row="0"/>
+        <TextBox Name="CedulaTextBox" Margin="79,92,302,100" Grid.RowSpan="2"/>
+        <DatePicker Name="FechaNacimientoDateTimePicker" Margin="368,90,36,98" Grid.RowSpan="2"></DatePicker>
+        <TextBox Name="TelefonoTextBox" Margin="65,49,338,37" Grid.Row="1"/>
+        <TextBox x:Name="TipoTextBox" Margin="286,48,117,38" Grid.Row="1"/>
+
+    </Grid>
+
+
+
+</Window>

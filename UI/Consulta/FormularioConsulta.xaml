@@ -1,0 +1,40 @@
+﻿<Window x:Class="RegistroConDetalle.UI.Consulta.FormularioConsulta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroConDetalle.UI.Consulta"
+        mc:Ignorable="d"
+       Title="Formulario para Consulta" Height="450" Width="800" Background="LightGray">
+    <Window.Resources>
+        <Style x:Key="Texts" TargetType="TextBlock">
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Width" Value="100"></Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+            <TextBlock Text="Filtrar"  Style="{StaticResource Texts}" Width="40" Height="18"></TextBlock>
+            <ComboBox  x:Name="FiltrarComboBox" Height="19" Width="95" Margin="5,0">
+                <ComboBoxItem Content="TODO"/>
+                <ComboBoxItem Content="ID"/>
+                <ComboBoxItem Content="NOMBRE"/>
+            </ComboBox>
+            <TextBlock Style="{StaticResource Texts}" Width="55" Height="19">Criterio</TextBlock>
+            <TextBox x:Name="CriterioTextBox" Width="50" Height="17"/>
+            <Button Name="ConsultarButton" Width="91" HorizontalContentAlignment="Right" Margin="5,0" Click="ConsultarButton_Click_1" FontSize="14" FontWeight="Bold">
+                <Button.Background>
+                    <ImageBrush ImageSource="buscar.png" Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+                Consultar
+            </Button>
+        </StackPanel>
+
+        <DataGrid Name="ConsultaPersonasDataGrid" Margin="0,44,0,-334"/>
+    </Grid>
+</Window>
